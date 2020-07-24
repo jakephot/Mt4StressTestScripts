@@ -1,1 +1,16 @@
-⼯鎜䬠䕅⁐䡔卉䰠义⁅佔䔠华剕⁅䡔呁吠䥈⁓䥆䕌䤠⁓䅓䕖⁄义唠䥎佃䕄鎜਍瀣潲数瑲⁹桳睯楟灮瑵൳ഊ椊灮瑵猠牴湩⁧湏祬祓扭汯㴠∠㬢਍਍潶摩猠慴瑲⤨笠਍†映牯椨瑮椠〽※⁩‼牏敤獲潔慴⡬㬩椠⬫笩਍†††晩伨摲牥敓敬瑣〨‬䕓䕌呃䉟彙佐ⱓ䴠䑏彅剔䑁卅 㴽映污敳 牢慥㭫਍†††晩伨汮卹浹潢⁬㴡∠•☦传摲牥祓扭汯⤨℠‽湏祬祓扭汯 潣瑮湩敵഻ ਍†††晩伨摲牥汃獯⡥牏敤呲捩敫⡴Ⱙ传摲牥潌獴⤨‬牏敤䍲潬敳牐捩⡥Ⱙ〠‬䱃归低䕎⤩笠਍††††椠ⴭ഻ ††素਍†††汓敥⡰〱⤰഻ †ൽ紊
+// ✓ KEEP THIS LINE TO ENSURE THAT THIS FILE IS SAVED IN UNICODE ✓あああ
+#property show_inputs
+
+input string OnlySymbol = "";
+
+void start() {
+   for(int i=0; i < OrdersTotal(); i++){
+      if(OrderSelect(0, SELECT_BY_POS, MODE_TRADES) == false) break;
+      if(OnlySymbol != "" && OrderSymbol() != OnlySymbol) continue;
+ 
+      if(OrderClose(OrderTicket(), OrderLots(), OrderClosePrice(), 0, CLR_NONE)) {
+         i--;
+      }
+      Sleep(100);
+   }
+}
