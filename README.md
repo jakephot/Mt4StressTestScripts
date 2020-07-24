@@ -1,4 +1,4 @@
-# EaNinja Tracker Client
+# Mt4 Stress Test Scripts
 
 ## Encoding
 
